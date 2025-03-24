@@ -1,0 +1,21 @@
+:host() {
+    --dark-blue: #243356;
+    --dim-blue: #233e5f;
+    --light-blue: #1fdaf3;
+    --white: #fff;
+}
+.custom-label {
+    color: var(--light-blue);
+}
+
+.custom-select {
+    color: var(--dark-blue);
+}
+
+.custom-select option {
+    color: var(--dim-blue);
+}
+
+.custom-select option:hover {
+    color: var(--light-blue);
+}
