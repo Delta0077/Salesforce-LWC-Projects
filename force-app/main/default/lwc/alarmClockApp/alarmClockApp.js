@@ -4,6 +4,7 @@ export default class AlarmClockApp extends LightningElement {
 
     // Impotrting the static resource
     clcockImage = AlarmClockAssets + '/alarmClock.png';
+    alarmRingtone = new Audio(AlarmClockAssets + '/bedside-clock-alarm-95792.mp3');
 
     hours = [];
     minutes = [];
@@ -64,6 +65,8 @@ export default class AlarmClockApp extends LightningElement {
         if(this.alarmTime === `${hours}:${minutes} ${AmPm}`) {
             console.log("Wake up! It's time to wake up!")
             this.isAlarmTriggered = true;
+            this.alarmRingtone.play();
+            this.alarmRingtone.loop = true;
         }
         }, 1000)
         
@@ -106,5 +109,6 @@ export default class AlarmClockApp extends LightningElement {
             element.reset("")
         })
         this.isAlarmTriggered = false
+        this.alarmRingtone.pause()
     }
 }
