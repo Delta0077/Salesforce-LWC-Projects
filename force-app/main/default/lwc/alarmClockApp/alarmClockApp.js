@@ -91,4 +91,13 @@ export default class AlarmClockApp extends LightningElement {
         this.alarmTime = `${this.selectedHour}:${this.selectedMinute} ${this.selectedMeridian}`
         this.isAlarmSet = true;
     }
+
+    clearAlarmHandler() {
+        this.alarmTime = "";
+        this.isAlarmSet = false;
+        const elements = this.template.querySelectorAll('c-clock-dropdown')
+        Array.from(elements).forEach(element => {
+            element.reset("")
+        })
+    }
 }
