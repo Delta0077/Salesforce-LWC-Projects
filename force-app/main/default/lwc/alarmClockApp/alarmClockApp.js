@@ -11,6 +11,8 @@ export default class AlarmClockApp extends LightningElement {
     selectedHour = "";
     selectedMinute = "";
     selectedMeridian = "";
+    alarmTime = "";
+    isAlarmSet = false;
     currentTime = "";
     fullDate = "";
 
@@ -54,6 +56,9 @@ export default class AlarmClockApp extends LightningElement {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         this.currentTime = `${hours} : ${minutes} : ${seconds} ${AmPm}`
+        if(this.alarmTime === `${hours}:${minutes} ${AmPm}`) {
+            console.log("Wake up! It's time to wake up!")
+        }
         }, 1000)
         
     }
@@ -80,9 +85,10 @@ export default class AlarmClockApp extends LightningElement {
         } else if(label === "AM/PM") {
             this.selectedMeridian = value;
         }
+    }
 
-        console.log("selectedHour" + this.selectedHour);
-        console.log("selectedMinute" + this.selectedMinute);
-        console.log("selectedMeridian" + this.selectedMeridian);
+    setAlarmHandler() {
+        this.alarmTime = `${this.selectedHour}:${this.selectedMinute} ${this.selectedMeridian}`
+        this.isAlarmSet = true;
     }
 }
