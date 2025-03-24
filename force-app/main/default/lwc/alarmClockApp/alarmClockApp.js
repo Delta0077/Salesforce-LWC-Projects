@@ -13,6 +13,11 @@ export default class AlarmClockApp extends LightningElement {
     selectedMeridian = "";
     currentTime = "";
     fullDate = "";
+
+    get isFieldNotSelected() {
+        return !(this.selectedHour && this.selectedMinute && this.selectedMeridian)
+    }
+
     connectedCallback() {
         this.CurrentTimeHandler();
         this.createHoursOptions();

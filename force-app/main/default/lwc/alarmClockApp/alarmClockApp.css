@@ -55,3 +55,16 @@ img {
     font-weight: 500;
     color: var(--yellow);
 }
+
+.slds-button_neutral:disabled {
+    background: #c7b6b6;
+    color: var(--dark-blue);
+    cursor: not-allowed;
+    border: 2px solid var(--light-blue);
+}
+
+.slds-button_neutral:hover {
+    background: var(--yellow);
+    color: var(--dark-blue);
+    border: 2px solid var(--yellow);
+}
