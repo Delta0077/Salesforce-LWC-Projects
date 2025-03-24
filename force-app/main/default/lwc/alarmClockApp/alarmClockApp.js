@@ -13,11 +13,16 @@ export default class AlarmClockApp extends LightningElement {
     selectedMeridian = "";
     alarmTime = "";
     isAlarmSet = false;
+    isAlarmTriggered = false;
     currentTime = "";
     fullDate = "";
 
     get isFieldNotSelected() {
         return !(this.selectedHour && this.selectedMinute && this.selectedMeridian)
+    }
+
+    get shakeImage() {
+        return this.isAlarmTriggered ? "shake" : ""
     }
 
     connectedCallback() {
@@ -58,6 +63,7 @@ export default class AlarmClockApp extends LightningElement {
         this.currentTime = `${hours} : ${minutes} : ${seconds} ${AmPm}`
         if(this.alarmTime === `${hours}:${minutes} ${AmPm}`) {
             console.log("Wake up! It's time to wake up!")
+            this.isAlarmTriggered = true;
         }
         }, 1000)
         
@@ -99,5 +105,6 @@ export default class AlarmClockApp extends LightningElement {
         Array.from(elements).forEach(element => {
             element.reset("")
         })
+        this.isAlarmTriggered = false
     }
 }
