@@ -18,10 +18,12 @@ export default class AlarmClockApp extends LightningElement {
     currentTime = "";
     fullDate = "";
 
+    // getter method to check if the alarm is set or not
     get isFieldNotSelected() {
         return !(this.selectedHour && this.selectedMinute && this.selectedMeridian)
     }
 
+    // getter method to check if the alarm is set or not and return shake class if alarm is triggered
     get shakeImage() {
         return this.isAlarmTriggered ? "shake" : ""
     }
