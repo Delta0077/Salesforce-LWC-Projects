@@ -1,3 +1,26 @@
 <template>
-    <h1>BTC!</h1>
+    <div class="currency-app">
+        <div class="container">
+            <div class="slds-card">
+                <form>
+                    <h1>Currency Converter</h1>
+                    <!--Image-->
+                    <lightning-input type="number" name="amount" label="Amount" placeholder="Amount" variant="label-hidden" required class="slds-m-vertical_x-large" >
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col">
+                            <span>Drop Down 1</span>
+                            </div>
+                            <div class="slds-col">
+                                <lightning-icon icon-name='action:change_record_type' alternative-text='change_record_type' size='small' title='Convert icon'></lightning-icon>
+                            </div>
+                            <div class="slds-col">
+                            <span>Drop Down 2</span>
+                            </div>
+                        </div>
+                    </lightning-input>
+                    <button type="submit" class="slds-button slds-button_stretch">Convert</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </template>
