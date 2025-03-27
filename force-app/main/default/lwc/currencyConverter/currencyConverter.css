@@ -1,0 +1,31 @@
+:host() {
+    --yellow: #f9ba49;
+    --dark-blue: #0c2451;
+    --font-12: .75rem;
+    --font-16: 1rem;
+    --font-24: 1.5rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1em;
+}
+.custom-card {
+    max-width: 530px;
+    min-width: 380px;;
+    background: var(--dark-blue);
+    border-radius: 1em;
+    border: none;
+    padding: 1em;
+}
+
+.custom-button, .custom-button:hover, .custom-button:active {
+    background: var(--yellow);
+    color: var(--dark-blue);
+    padding: .5em;
+    font-size: var(--font-24);
+    margin-top: 1em;
+}
