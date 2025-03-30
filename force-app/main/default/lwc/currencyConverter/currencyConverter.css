@@ -29,3 +29,7 @@
     font-size: var(--font-24);
     margin-top: 1em;
 }
+
+.baseline{
+    align-items: baseline;
+}
