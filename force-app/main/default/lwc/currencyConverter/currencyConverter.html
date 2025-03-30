@@ -7,15 +7,29 @@
                     <!--Image-->
                     <lightning-input type="number" name="amount" label="Amount" placeholder="Amount" variant="label-hidden" required class="slds-m-vertical_x-large" >
                     </lightning-input>
-                        <div class="slds-grid slds-gutters">
+                        <div class="slds-grid slds-gutters baseline">
                             <div class="slds-col">
-                            <span>Drop Down 1</span>
+                                <lightning-combobox
+                                    name="countryFrom"
+                                    label="From"
+                                    variant="label-hidden"
+                                    value={countryFrom}
+                                    placeholder="Currency"
+                                    options={countryList}
+                                    onchange={handleChange} ></lightning-combobox>
                             </div>
-                            <div class="slds-col">
+                            <div class="slds-col slds-text-align_center">
                                 <lightning-icon icon-name='action:change_record_type' alternative-text='change_record_type' size='small' title='Convert icon'></lightning-icon>
                             </div>
                             <div class="slds-col">
-                            <span>Drop Down 2</span>
+                                <lightning-combobox
+                                name="countryTo"
+                                label="To"
+                                variant="label-hidden"
+                                value={countryTo}
+                                placeholder="Currency"
+                                options={countryList}
+                                onchange={handleChange} ></lightning-combobox>
                             </div>
                         </div>
                     <button type="submit" class="slds-button slds-button_stretch custom-button">Convert</button>
