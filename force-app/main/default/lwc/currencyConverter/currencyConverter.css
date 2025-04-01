@@ -34,13 +34,6 @@
     align-items: baseline;
 }
 
-.custom-icon {
-    --slds-c-icon-color-foreground-default: var(--yellow);
-    --slds-c-icon-color-background: var(--yellow);
-    --slds-c-icon-color-foreground:var(--dark-blue);
-    transform: rotate(45deg);
-}
-
 img {
     display: block;
     margin: 0 auto;
@@ -52,3 +45,11 @@ img {
     background-repeat: no-repeat;
     min-height: 100vh;
 }
+
+/*Add the class name below to the lightning-icon element.*/
+.custom-icon-change_record_type { 
+    --slds-c-icon-color-foreground: var(--dark-blue);
+    --slds-c-icon-color-background: var(--yellow);
+    transform: rotate(45deg);
+   }
+   
