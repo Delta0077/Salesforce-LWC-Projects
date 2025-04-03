@@ -1,6 +1,8 @@
 :host() {
     --yellow: #f9ba49;
     --dark-blue: #0c2451;
+    --light-blue: #3591ce;
+    --orange: #f17730;
     --font-12: .75rem;
     --font-16: 1rem;
     --font-24: 1.5rem;
@@ -52,4 +54,16 @@ img {
     --slds-c-icon-color-background: var(--yellow);
     transform: rotate(45deg);
    }
-   
+
+.result {
+    color: var(--light-blue);
+    max-width: 80%;
+    margin: 1em auto;
+    border-radius: .2em;
+    font-size: var(--font-24);
+    font-weight: bold;
+}
+
+.result-countryTo {
+    color: var(--orange);
+}
