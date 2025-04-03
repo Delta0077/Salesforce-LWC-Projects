@@ -14,6 +14,8 @@ export default class CurrencyConverter extends LightningElement {
         event.preventDefault();
         const { name, value} = event.target
         this[name] = value;
+        this.result = '';
+        this.error = '';
     }
 
     submitHandler(event) {
