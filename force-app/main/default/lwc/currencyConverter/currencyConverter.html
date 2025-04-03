@@ -35,6 +35,15 @@
                                 onchange={handleChange} ></lightning-combobox>
                             </div>
                         </div>
+                        <div class="slds-text-align_center">
+                        <template if:true={result}>
+                            <div class="result">{amount} {countryFrom} = <span class="result-countryTo">{result}  {countryTo}</span>
+                            </div>
+                        </template>
+                        <template if:true={error}>
+                            <div class="result">{error}</div> <!-- Display error message if any -->
+                        </template>
+                        </div>
                     <button type="submit" class="slds-button slds-button_stretch custom-button">Convert</button>
                 </form>
             </div>
