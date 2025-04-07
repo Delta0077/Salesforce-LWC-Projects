@@ -1,0 +1,68 @@
+:host() {
+    --bg-blue: #091f43;
+    --bg-light: #fff;
+    --br-color: #ccc;
+    --br-color_light: #ddd;
+    --btn-color: #E50046;
+    --fs-medium: 1.25rem;
+    --fs-large: 1.5rem;
+    --fs-xlarge: 1.875rem;
+}
+.app {
+    background: var(--bg-blue);
+    height: 100vh;
+
+}
+
+.app-card {
+    background:var(--bg-light);
+    max-width: 400px;
+    min-width: 375px;
+    border-radius: 8px;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    font-size:var(--fs-xlarge);
+    font-weight: 500;
+    color: var(--bg-blue);
+    padding: 1em;
+    border-bottom: 1px solid var(--br-color);
+}
+
+section {
+    padding: 2em;
+}
+
+input{
+    width: 100%;
+    padding: 1em;
+    height: 55px;
+    text-align: center;
+    outline: none;
+    font-size: var(--fs-large);
+    border-radius: 8px;
+    border: 1px solid var(--br-color);
+}
+
+input::placeholder{
+    color: var(--br-color_light);
+}
+
+button {
+    width: 100%;
+    padding: .5em;
+    text-align: center;
+    outline: none;
+    font-size: var(--fs-large);
+    border-radius: 8px;
+    border: none;
+    background-color: var(--btn-color);
+    color: var(--bg-light);
+    cursor: pointer;
+}
