@@ -3,8 +3,8 @@
         <div class="app-card">
             <header class="flex-center"><h1>Weather App</h1></header>
             <section class="slds-m-around_large">
-                <form action="">
-                    <input type="text" placeholder="Enter city name" required spellcheck="false">
+                <form action="" onsubmit={submitHandler}>
+                    <input type="text" placeholder="Enter city name" required spellcheck="false" onkeyup={searchHandler}>
                     <button type="submit" class="slds-m-top_large">Search</button>
                 </form>
             </section>
