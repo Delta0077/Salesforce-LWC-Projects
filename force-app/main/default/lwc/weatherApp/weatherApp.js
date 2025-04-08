@@ -1,4 +1,5 @@
 import { LightningElement } from 'lwc';
+const API_KEY = '82a38d8ae9d310f88aa46de9f636748b'
 
 export default class WeatherApp extends LightningElement {
     cityName = ''
