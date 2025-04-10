@@ -66,3 +66,17 @@ button {
     color: var(--bg-light);
     cursor: pointer;
 }
+
+.fetch-success {
+    color: #155724;
+    background: #e4edda;
+    padding: 1em;
+    margin: .5em;
+}
+
+.fetch-error {
+    color: #721c24;
+    background: #f8d7da;
+    padding: 1em;
+    margin: .5em;
+}
