@@ -28,7 +28,8 @@ export default class WeatherApp extends LightningElement {
 
         fetch(URL).then(res=> res.json()).then(result => {
             console.log(JSON.stringify(result));
-            this.loadingText = '';
+
+            this.weatherDetails(result); // This method should be defined to handle the weather data
         }).catch((err) => {
             console.error('Error fetching weather data:', err);
             this.loadingText = 'Error fetching weather data. Please try again.';
@@ -37,5 +38,14 @@ export default class WeatherApp extends LightningElement {
             // or handle the error in a way that suits your application
             // Handle the error accordingly
         })
+    }
+    weatherDetails(info) {
+        if(info.cod === '404') {
+            this.isError = true;
+            this.loadingText = `${this.cityName} not found. Please try again.`; // Display an error message to the user
+        } else {
+            this.loadingText = '';
+            this.isError = false;
+        }
     }
 }
