@@ -3,7 +3,7 @@
         <div class="app-card">
             <header class="flex-center"><h1>Weather App</h1></header>
             <template if:true={loadingText}>
-                <div>
+                <div class={dynamicClasses}> <!-- Dynamic class for loading success or error messages -->
                     {loadingText}
                 </div>
             </template>
