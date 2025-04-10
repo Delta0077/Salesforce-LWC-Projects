@@ -30,7 +30,7 @@ export default class WeatherApp extends LightningElement {
             console.log(JSON.stringify(result));
 
             this.weatherDetails(result); // This method should be defined to handle the weather data
-        }).catch((err) => {
+        }).catch((err) => { // Handle API or Server related erros here
             console.error('Error fetching weather data:', err);
             this.loadingText = 'Error fetching weather data. Please try again.';
             this.isError = true;
@@ -39,6 +39,8 @@ export default class WeatherApp extends LightningElement {
             // Handle the error accordingly
         })
     }
+
+    // Error handling method for wrong/invalid city names
     weatherDetails(info) {
         if(info.cod === '404') {
             this.isError = true;
