@@ -15,30 +15,34 @@
             </section>
 
             <section class="slds-m-around_large slds-var-p-around_medium text-center">
+                <img src={cloudIcon} alt="Weather icon" class="weather-icon">
+                <div class="wrapper">
                 <div class="temperature">
                     <span>12</span>
                     <span>℃</span>
                 </div>
                 <div class="description">Clear Sky</div>
                 <div class="location">
+                    <img src={mapIcon} alt="Location Icon">
                     <span>London, GB</span>
+                </div>
                 </div>
             </section>
 
             <footer>
             <div class="feels-like">
                 <div>
-                    <!--Image-->
+                    <img src={thermometerIcon} alt="Temperature Icon">
                     <div>11℃</div>
-                    <p>Feels Like</p>
                 </div>
+                <p>Feels Like</p>
             </div>
             <div class="humidity">
                 <div>
-                    <!--Image-->
+                    <img src={dropletIcon} alt="Humidity Icon">
                     <div>83%</div>
-                    <p>Humidity</p>
                 </div>
+                <p>Humidity</p>
             </div>
             </footer>
         </div>
