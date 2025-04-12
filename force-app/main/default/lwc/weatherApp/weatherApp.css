@@ -8,9 +8,10 @@
     --fs-large: 1.5rem;
     --fs-xlarge: 1.875rem;
 }
+
 .app {
     background: var(--bg-blue);
-    height: 100vh;
+    min-height: 100vh;
 
 }
 
@@ -36,7 +37,6 @@ header {
 }
 
 section {
-    padding: 2em;
 }
 
 input{
@@ -79,4 +79,38 @@ button {
     background: #f8d7da;
     padding: 1em;
     margin: .5em;
+}
+
+.text-center {
+    text-align: center;
+
+}
+
+.temperature {
+    font-size: 3.75rem;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.description, .location {
+    font-size: 1.5rem;
+    line-height: 32px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border-top: 1px solid #dedede;
+}
+
+.feels-like {
+    width: 100%;
+    padding: 1em;
+}
+
+.humidity {
+    width: 100%;
+    border-left: 1px solid #dedede;
+    padding: 1em;
 }
