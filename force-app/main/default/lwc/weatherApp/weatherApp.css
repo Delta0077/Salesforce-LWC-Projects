@@ -114,3 +114,18 @@ footer {
     border-left: 1px solid #dedede;
     padding: 1em;
 }
+
+.weather-icon {
+    max-width: 125px;
+}
+
+.wrapper {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    min-width: 150px;
+    max-width: 200px;
+    height: 30vh;
+    align-items: center;
+    justify-content: space-evenly;
+}
