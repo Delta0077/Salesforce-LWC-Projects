@@ -1,7 +1,13 @@
 <template>
     <div class="app flex-center">
         <div class="app-card">
-            <header class="flex-center"><h1>Weather App</h1></header>
+            <header class="flex-center">
+            <template if:true={response}>
+                <img src={arrowBackIcon} alt="back arrow" onclick={clearInput} class=" cursor">
+            </template>
+                <h1 class="heading">Weather App</h1>
+            </header>
+            <template if:false={response}>
             <template if:true={loadingText}>
                 <div class={dynamicClasses}> <!-- Dynamic class for loading success or error messages -->
                     {loadingText}
@@ -13,18 +19,18 @@
                     <button type="submit" class="slds-m-top_large">Search</button>
                 </form>
             </section>
-
+        </template>
+            <template if:true={response}>
             <section class="slds-m-around_large slds-var-p-around_medium text-center">
-                <img src={cloudIcon} alt="Weather icon" class="weather-icon">
+                <img src={weatherIcon} alt="Weather icon" class="weather-icon">
                 <div class="wrapper">
                 <div class="temperature">
-                    <span>12</span>
-                    <span>℃</span>
+                    <span>{response.temp}</span>
                 </div>
-                <div class="description">Clear Sky</div>
+                <div class="description">{response.description}</div>
                 <div class="location">
                     <img src={mapIcon} alt="Location Icon">
-                    <span>London, GB</span>
+                    <span>{response.location}</span>
                 </div>
                 </div>
             </section>
@@ -33,18 +39,19 @@
             <div class="feels-like">
                 <div>
                     <img src={thermometerIcon} alt="Temperature Icon">
-                    <div>11℃</div>
+                    <div>{response.feels_like}℃</div>
                 </div>
                 <p>Feels Like</p>
             </div>
             <div class="humidity">
                 <div>
                     <img src={dropletIcon} alt="Humidity Icon">
-                    <div>83%</div>
+                    <div>{response.humidity}</div>
                 </div>
                 <p>Humidity</p>
             </div>
             </footer>
+        </template>
         </div>
     </div>
     
