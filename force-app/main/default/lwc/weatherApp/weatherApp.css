@@ -29,14 +29,17 @@
 }
 
 header {
+    display: flex;
+    max-width: 500px;
+    justify-content: space-between;
     font-size:var(--fs-xlarge);
     font-weight: 500;
     color: var(--bg-blue);
     padding: 1em;
     border-bottom: 1px solid var(--br-color);
 }
-
-section {
+.heading {
+    margin: 0 auto;
 }
 
 input{
@@ -129,3 +132,8 @@ footer {
     align-items: center;
     justify-content: space-evenly;
 }
+
+.cursor {
+    cursor: pointer;
+}
+
