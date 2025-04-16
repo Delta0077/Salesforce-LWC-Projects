@@ -1,6 +1,6 @@
 import { LightningElement } from 'lwc';
 import WEATHER_ICONS from '@salesforce/resourceUrl/weatherAppIcons'; // Importing weather icons from static resources
-const API_KEY = '82a38d8ae9d310f88aa46de9f636748b'
+import getWeatherDetails from '@salesforce/apex/weatherAppController.getWeatherDetails';
 
 export default class WeatherApp extends LightningElement {
 
@@ -40,8 +40,20 @@ export default class WeatherApp extends LightningElement {
         this.loadingText = 'Fetching weather data...';
         console.log('Fetching data for city:', this.cityName);
         // Fetch data from the weather API using the city name
+        getWeatherDetails({input: this.cityName}).then(result => {
+            this.weatherDetails(JSON.parse(result)); // This method should be defined to handle the weather data
+        }).catch((err) => { // Handle API or Server related erros here
+            console.error('Error fetching weather data:', err);
+            this.response = null
+            this.loadingText = 'Error fetching weather data. Please try again.';
+            this.isError = true;
+            // Optionally, you can display an error message to the user
+            // or handle the error in a way that suits your application
+            // Handle the error accordingly
+        })
 
-        const URL = `https://api.openweathermap.org/data/2.5/weather?q=${this.cityName}&appid=${API_KEY}&units=metric`
+        // Below is client-side code to fetch data from the OpenWeatherMap API
+        /*const URL = `https://api.openweathermap.org/data/2.5/weather?q=${this.cityName}&appid=${API_KEY}&units=metric`
 
         fetch(URL).then(res=> res.json()).then(result => {
             console.log(JSON.stringify(result));
@@ -54,7 +66,7 @@ export default class WeatherApp extends LightningElement {
             // Optionally, you can display an error message to the user
             // or handle the error in a way that suits your application
             // Handle the error accordingly
-        })
+        })*/
     }
 
     // Error handling method for wrong/invalid city names
