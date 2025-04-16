@@ -12,13 +12,13 @@
 .app {
     background: var(--bg-blue);
     min-height: 100vh;
-
+    padding : .75em;
 }
 
 .app-card {
     background:var(--bg-light);
     max-width: 400px;
-    min-width: 375px;
+    min-width: 350px;
     border-radius: 8px;
 }
 
